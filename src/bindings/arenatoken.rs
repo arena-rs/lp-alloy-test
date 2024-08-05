@@ -382,8 +382,9 @@ interface ArenaToken {
 ```*/
 #[allow(non_camel_case_types, non_snake_case, clippy::style)]
 pub mod ArenaToken {
-    use super::*;
     use alloy::sol_types as alloy_sol_types;
+
+    use super::*;
     /// The creation / init bytecode of the contract.
     ///
     /// ```text

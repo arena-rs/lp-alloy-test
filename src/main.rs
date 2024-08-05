@@ -1,19 +1,23 @@
 mod bindings;
 
-use alloy::primitives::{Address, Bytes, Uint, I256, U256};
+use std::time::Duration;
+
 use alloy::{
     network::{Ethereum, EthereumWallet},
     node_bindings::{Anvil, AnvilInstance},
+    primitives::{Address, Bytes, Uint, I256, U256},
     providers::ProviderBuilder,
     signers::local::PrivateKeySigner,
 };
-use std::time::Duration;
 
-use crate::bindings::arenatoken::ArenaToken;
-use crate::bindings::liquidityprovider::LiquidityProvider;
-use crate::bindings::liquidityprovider::LiquidityProvider::ModifyLiquidityParams;
-use crate::bindings::liquidityprovider::LiquidityProvider::PoolKey as LPoolKey;
-use crate::bindings::poolmanager::{PoolManager, PoolManager::PoolKey};
+use crate::bindings::{
+    arenatoken::ArenaToken,
+    liquidityprovider::{
+        LiquidityProvider,
+        LiquidityProvider::{ModifyLiquidityParams, PoolKey as LPoolKey},
+    },
+    poolmanager::{PoolManager, PoolManager::PoolKey},
+};
 
 #[tokio::main]
 async fn main() {
